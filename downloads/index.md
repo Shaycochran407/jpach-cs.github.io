@@ -14,7 +14,14 @@ Welcome to the central repository for starter files, toolchains, and project tem
 * **MinGW Starter Package (32-bit)** - [Release Notes](https://github.com/jpach-cs/jpach-cs.github.io/releases/tag/compiler) \| [Direct Download (.zip)](https://github.com/jpach-cs/jpach-cs.github.io/releases/download/compiler/MinGW.zip)  
   Base GCC, G++, and Make toolchain for Windows. *(See release notes for PATH configuration script).*
 
+## 🛠️ tree for GIT bash (Windows)
+* **Git Bash tree Utility** — [Release Notes](https://github.com/jpach-cs/jpach-cs.github.io/releases/tag/%23tree_GIT) \| [Direct Download (.zip)](http://downloads.sourceforge.net/gnuwin32/tree-1.5.2.2-bin.zip)  
+  Adds the `tree` command to Git Bash, enabling visual directory listing of Git internals (`.git/refs`, branch structure, etc.).
+
 
 ## 💻 Course Projects & Starters
 * **Lab 0: C Intro Project Template** — [Release Notes](https://github.com/jpach-cs/jpach-cs.github.io/releases/tag/v1.0) \| [Direct Download (.zip)](https://github.com/jpach-cs/jpach-cs.github.io/releases/download/v1.0/C_intro.zip)  
   Minimalist project containing `main.c`, `Makefile`, and VS Code workspace configurations.
+
+
+
