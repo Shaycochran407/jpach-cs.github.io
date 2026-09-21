@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>112ass04</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="csci-112-assignment-standard-library-functions-ii">CSCI 112
+Assignment – Standard Library Functions II</h1>
+<p>Points: 10</p>
+<p>Automated tests will run on GitHub Actions after every push. Check
+the Actions tab to see which tests pass and which fail.</p>
+<hr />
+<h2 id="instructions">Instructions</h2>
+<ol type="1">
+<li><strong>Fork</strong> the repository on GitHub -
+<code>https://github.com/jpach-cs/112-lab04-template</code>.</li>
+<li>Clone your forked repository to your local machine.</li>
+<li>Open the file <code>code.c</code>.</li>
+<li>Implement every function listed below:
+<ul>
+<li>Read the comments above each function carefully.</li>
+<li>Follow the rules — use ONLY <code>if</code>, <code>switch</code>,
+<code>goto</code>, <code>putchar()</code>, <code>getchar()</code>,
+<code>sprintf()</code>.</li>
+<li>Do NOT use <code>while</code>, <code>for</code>,
+<code>do-while</code>, or any standard library functions.</li>
+<li><code>my_isalpha()</code> MUST call your own
+<code>my_islower()</code> and <code>my_isupper()</code>.</li>
+<li><code>my_isalnum()</code> MUST use <code>switch()</code> and call
+your own <code>my_isalpha()</code> and <code>my_isdigit()</code>.</li>
+<li>Every format function MUST call <code>clear_string(dest, 64)</code>
+as its first statement.</li>
+</ul></li>
+<li>Test your implementation locally using <code>main.c</code>.</li>
+<li>Once all functions are complete — save your changes, then
+<strong>commit</strong> and <strong>push</strong> to your
+repository.</li>
+<li>Go to the <strong>Actions</strong> tab on GitHub and check the test
+results.</li>
+</ol>
+<hr />
+<h2 id="functions-to-implement">Functions to implement</h2>
+<h3 id="utility">Utility</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void clear_string(char s[], int n)</code></td>
+<td>Sets first <code>n</code> characters of <code>s</code> to
+<code>'\0'</code>. MUST use <code>goto</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="from-previous-lab-re-implement">From previous lab —
+re-implement</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int my_isdigit(char c)</code></td>
+<td>Returns <code>1</code> if <code>c</code> is
+<code>'0'</code>–<code>'9'</code>, otherwise <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>int my_islower(char c)</code></td>
+<td>Returns <code>1</code> if <code>c</code> is
+<code>'a'</code>–<code>'z'</code>, otherwise <code>0</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="new-functions">New functions</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int my_isupper(char c)</code></td>
+<td>Returns <code>1</code> if <code>c</code> is
+<code>'A'</code>–<code>'Z'</code>, otherwise <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>int my_isalpha(char c)</code></td>
+<td>Returns <code>1</code> if <code>c</code> is a letter. MUST call
+<code>my_islower()</code> and <code>my_isupper()</code>.</td>
+</tr>
+<tr>
+<td><code>int my_isalnum(char c)</code></td>
+<td>Returns <code>1</code> if <code>c</code> is a letter or digit. MUST
+use <code>switch()</code>.</td>
+</tr>
+<tr>
+<td><code>int my_strcmp(char a[], char b[])</code></td>
+<td>Returns <code>-1</code>, <code>0</code>, or <code>1</code>.</td>
+</tr>
+<tr>
+<td><code>int my_strchr(char s[], char c)</code></td>
+<td>Returns index of first occurrence of <code>c</code>, or
+<code>-1</code>.</td>
+</tr>
+<tr>
+<td><code>int my_pow(int a, int b)</code></td>
+<td>Returns <code>a</code> raised to the power of <code>b</code>.</td>
+</tr>
+<tr>
+<td><code>double my_pow_double(double a, int b)</code></td>
+<td>Returns <code>a</code> raised to the power of <code>b</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="format-functions">Format functions</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>char * format_my_isupper(char dest[], char c, int r)</code></td>
+<td>e.g. <code>"isupper('A') = true"</code></td>
+</tr>
+<tr>
+<td><code>char * format_my_isalpha(char dest[], char c, int r)</code></td>
+<td>e.g. <code>"isalpha('a') = true"</code></td>
+</tr>
+<tr>
+<td><code>char * format_my_isalnum(char dest[], char c, int r)</code></td>
+<td>e.g. <code>"isalnum('!') = false"</code></td>
+</tr>
+<tr>
+<td><code>char * format_my_strcmp(char dest[], int r)</code></td>
+<td>e.g. <code>"comparison: equal"</code></td>
+</tr>
+<tr>
+<td><code>char * format_my_strchr(char dest[], int r)</code></td>
+<td>e.g. <code>"found at: 2"</code> or <code>"not found"</code></td>
+</tr>
+<tr>
+<td><code>char * format_my_pow(char dest[], int r)</code></td>
+<td>e.g. <code>"pow = 256         "</code> — left-justified, width
+12</td>
+</tr>
+<tr>
+<td><code>char * format_my_pow_double(char dest[], double r)</code></td>
+<td>fixed total width of 12, adaptive precision</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="iteration-pattern-reminder">Iteration pattern — reminder</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>loop<span class="op">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>i <span class="op">&gt;=</span> n<span class="op">)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">goto</span> done<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// body</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">goto</span> loop<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>done<span class="op">:</span></span></code></pre></div>
+<hr />
+<h2 id="header-comment-required-in-code.c">#Header comment — required in
+code.c</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Your Name</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">// CSCI 112 Fall 2026</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Programming Assignment #1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">// I declare that I am the author of this work, take full responsibility for it, and have disclosed any material external assistance.</span></span></code></pre></div>
+<hr />
+</body>
+</html>
